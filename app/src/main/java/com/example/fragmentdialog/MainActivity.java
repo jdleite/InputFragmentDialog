@@ -3,18 +3,19 @@ package com.example.fragmentdialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyCustomDialog.OnListener {
 
     public static final String TAG = "MainActivity";
     ViewHolder viewHolder = new ViewHolder();
 
     String mInput;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
        });
 
     }
+
+    @Override
+    public void input(String input) {
+        Log.d(TAG , "sendInput: got the input: " +  input);
+
+        viewHolder.txtInput.setText(input);
+    }
+
 
     private class ViewHolder{
         Button btnOpen;

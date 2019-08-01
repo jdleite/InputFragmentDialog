@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-public class MyCustomDialog extends DialogFragment {
+public class MyCustomDialog extends DialogFragment  {
 
     private static final String TAG = "MyCustomDialog";
 
@@ -57,6 +57,8 @@ public class MyCustomDialog extends DialogFragment {
 
         return view;
     }
+
+
 
     public interface OnListener{
         void input(String input);
